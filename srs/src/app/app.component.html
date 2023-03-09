@@ -5,5 +5,5 @@
   <li class="break"></li>
   <li class="button"> <app-button [name]="'Yes'"></app-button> </li>
   <li class="button"> <app-button [name]="'No'"></app-button> </li>
-  <li class="button"> <app-button [name]="'Flip'" (flipEvent) = "flip()"></app-button> </li>
+  <li class="button"> <app-button [name]="'Flip'" (cardFlipped) = "onCardFlip()"></app-button> </li>
 </ul>

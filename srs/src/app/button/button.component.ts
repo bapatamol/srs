@@ -7,11 +7,11 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 })
 export class ButtonComponent {
   @Input() name: string;
-  @Output() flipEvent = new EventEmitter();
+  @Output() cardFlipped = new EventEmitter();
 
 
   flip () {
-    this.flipEvent.emit();
+    this.cardFlipped.emit();
   }
 
   handleOnClick() {

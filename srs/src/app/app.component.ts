@@ -17,7 +17,7 @@ export class AppComponent {
     this.cardText = this.c.question;
   }
   
-  flip() {
+  onCardFlip() {
     this.cardText = this.cardText === this.c.question ? this.c.answer : this.c.question;
   }
 }
