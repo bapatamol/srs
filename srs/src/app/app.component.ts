@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 import { card } from "./card.model"
 
@@ -9,11 +9,15 @@ import { card } from "./card.model"
 })
 export class AppComponent {
   title = 'srs';
-  cards: Array<card>;
+  cardText: string;
+  c: card;
 
   constructor() {
-    this.cards = [];
-    this.cards.push(new card("question1", "answer1"));
-
+    this.c = new card("question1", "answer1");
+    this.cardText = this.c.question;
+  }
+  
+  flip() {
+    this.cardText = this.cardText === this.c.question ? this.c.answer : this.c.question;
   }
 }
