@@ -25,7 +25,8 @@ export class ButtonComponent {
       switch (this.name) {
         case "Yes": return "btn btn-success";
         case "No" : return "btn btn-danger";
-        case "Flip": return "btn btn-primary";
+        case "Flip": 
+        case "Add": return "btn btn-primary";
       }
   }
 
