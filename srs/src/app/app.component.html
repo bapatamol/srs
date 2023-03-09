@@ -1,7 +1,7 @@
 <ul>
   <li class="header"> <app-button></app-button> </li>
   <li class="break"></li>
-  <li class="main"> <app-card></app-card> </li>
+  <li class="main"> <app-card *ngFor="let c of cards" [c]="c"></app-card> </li>
   <li class="break"></li>
   <li class="button"> <app-button></app-button> </li>
   <li class="button"> <app-button></app-button> </li>

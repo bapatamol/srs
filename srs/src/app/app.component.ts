@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
+import { card } from "./card.model"
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'srs';
+  cards: Array<card>;
+
+  constructor() {
+    this.cards = [];
+    this.cards.push(new card("question1", "answer1"));
+
+  }
 }
