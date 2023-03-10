@@ -1,9 +1,7 @@
-<ul>
-  <li class="header"> <app-button [name]="'Add'"></app-button> </li>
-  <li class="break"></li>
-  <li class="main"> <app-card [qOrA]="cardText"></app-card> </li>
-  <li class="break"></li>
-  <li class="button"> <app-button [name]="'Yes'"></app-button> </li>
-  <li class="button"> <app-button [name]="'No'"></app-button> </li>
-  <li class="button"> <app-button [name]="'Flip'" (cardFlipped) = "onCardFlip()"></app-button> </li>
-</ul>
+<div class="tabs">
+  <div class="tab is-tab-selected" (click)="routeToLearn()">Learn</div>
+  <div class="tab" (click)="routeToAdd()">Add</div>
+ 
+</div>
+
+<router-outlet></router-outlet>

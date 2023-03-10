@@ -1,34 +1,16 @@
-ul {
-    list-style: none;
+.tabs {
     display: flex;
-    flex-wrap: wrap;
+    border-bottom: 1px solid #D7DBDD;
+  }
+  
+.tab {
+    cursor: pointer;
+    padding: 5px 30px;
+    color: #16A2D7;
+    font-size: 15px;
+    border-bottom: 2px solid transparent;
 }
 
-li {
-    margin: 2em;
-    padding: 0.5em;
-    border: 1px solid green;
-    
-}
-
-.header {
-    flex-basis: 100%;
-    text-align: center;
-}
-
-.main {
-    flex-basis: 100%;
-    text-align: center;
-}
-
-.button {
-    text-align: center;
-    flex-grow: 1;
-}
-
-.break {
-    flex-basis: 100%;
-    height: 0;
-    margin: 0;
-    padding: 0;
+.tab.is-tab-selected {
+    border-bottom-color: #4EBBE4;
 }
