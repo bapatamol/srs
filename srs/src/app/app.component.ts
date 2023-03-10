@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -14,8 +14,6 @@ export class AppComponent {
   learnStyle: string;
   addStyle: string;
 
-  constructor(private renderer: Renderer2  ) {
-  }
 
   routeToLearn() {
     this.learnStyle = "tab is-selected";
