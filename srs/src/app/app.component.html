@@ -1,6 +1,6 @@
 <div class="tabs">
-  <div class="tab is-tab-selected" (click)="routeToLearn()">Learn</div>
-  <div class="tab" (click)="routeToAdd()">Add</div>
+  <div [class]="learnStyle" routerLink="/learn" (click)="routeToLearn()" #learnTab>Learn</div>
+  <div [class]="addStyle" routerLink="/add" (click)="routeToAdd()" #addTab>Add</div>
  
 </div>
 

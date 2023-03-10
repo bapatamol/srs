@@ -11,6 +11,6 @@
     border-bottom: 2px solid transparent;
 }
 
-.tab.is-tab-selected {
+.tab.is-selected {
     border-bottom-color: #4EBBE4;
 }
