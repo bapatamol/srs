@@ -1,35 +1,27 @@
-import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent {
+  learnTabStyle: string;
+  addTabStyle: string;
 
-  @ViewChild('learnTab', {static: true}) learnTab: ElementRef;
-  @ViewChild('addTab', {static: true}) addTab: ElementRef;
-
-  learnStyle: string;
-  addStyle: string;
-
-
-  routeToLearn() {
-    this.learnStyle = "tab is-selected";
-    this.addStyle = "tab";
+  fixLearnTabStyle() {
+    this.learnTabStyle = "tab is-selected";
+    this.addTabStyle = "tab";
   }
 
-  routeToAdd() {
-    this.learnStyle = "tab";
-    this.addStyle = "tab is-selected";
+  fixAddTabStyle() {
+    this.learnTabStyle = "tab";
+    this.addTabStyle = "tab is-selected";
   }
 
   ngOnInit() {
-    this.learnStyle = "tab is-selected";
-    this.addStyle = "tab";
-  }
-
-
- 
+    this.learnTabStyle = "tab is-selected";
+    this.addTabStyle = "tab";
+  } 
 }

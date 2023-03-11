@@ -1,5 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { card } from '../card.model';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-add',
@@ -7,9 +7,6 @@ import { card } from '../card.model';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent {
-  c: card;
-  @ViewChild('question', {static: true}) question: ElementRef;
-  @ViewChild('answer', {static: true}) answer: ElementRef;
 
   addCard() {
     

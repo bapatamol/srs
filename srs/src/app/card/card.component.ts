@@ -1,6 +1,4 @@
 import { Component, Input} from '@angular/core';
-import { throwIfEmpty } from 'rxjs';
-import { card } from '../card.model';
 
 @Component({
   selector: 'app-card',
@@ -8,9 +6,6 @@ import { card } from '../card.model';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() qOrA: string;
-
-  constructor() {
-  }
+  @Input() cardText: string;
 
 }

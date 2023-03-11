@@ -14,7 +14,7 @@ export class ButtonComponent {
     this.cardFlipped.emit();
   }
 
-  handleOnClick() {
+  buttonClicked() {
     switch (this.name) {
       case "Yes": alert("I know the answer, push further back"); break;
       case "No": alert ("I do not recall, bring forward"); break;
