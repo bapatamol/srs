@@ -9,9 +9,10 @@ import { LearnComponent } from './learn/learn.component';
 import { AddComponent } from './add/add.component';
 
 const appRoutes: Routes = [
-  { path: '', component: LearnComponent},
+  { path: '', redirectTo: '/learn', pathMatch: 'full'},
   { path: 'learn', component: LearnComponent},
-  { path: 'add', component: AddComponent}
+  { path: 'add', component: AddComponent},
+  { path: '**', redirectTo : '/learn', pathMatch: 'full'}
 ]
 
 @NgModule({

@@ -5,13 +5,11 @@ ul {
 }
 
 li {
-    margin: 0.5em;
+    margin: 2em;
     padding: 0.5em;
-}
-
-.button {
-    text-align: center;
-    flex-basis: 100%;
+    border: 1px solid gold;
+    flex-grow: 1;
+    align-content: center;
 }
 
 .break {
@@ -19,4 +17,8 @@ li {
     height: 0;
     margin: 0;
     padding: 0;
+}
+
+a {
+   align-self:stretch;
 }

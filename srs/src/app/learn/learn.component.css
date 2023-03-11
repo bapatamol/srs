@@ -7,6 +7,7 @@ ul {
 li {
     margin: 2em;
     padding: 0.5em;
+    border: 1px solid blue;
 }
 
 .header {
