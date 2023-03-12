@@ -25,10 +25,10 @@ export class ButtonComponent {
   }
   setClass() {
       switch (this.name) {
-        case "Yes": return "btn btn-success";
-        case "No" : return "btn btn-danger";
+        case "Yes": return "btn-success";
+        case "No" : return "btn-danger";
         case "Flip": 
-        case "Add": return "btn btn-primary";
+        case "Add": return "btn-primary";
       }
   }
 

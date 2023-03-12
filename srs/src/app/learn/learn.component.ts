@@ -12,9 +12,9 @@ export class LearnComponent {
   c: card
 
   constructor() {
-    this.c = new card("question1", "answer1");
+    this.c = new card("Gautam", "Bapat");
     this.cardText = this.c.question;
-  }
+  } 
   
   onCardFlip() {
     this.cardText = this.cardText === this.c.question ? this.c.answer : this.c.question;
