@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AddComponent {
 
-  addCard() {
-    
+  addCard(data: NgForm) {
+    console.log(data.value);
+    data.reset();
   }
+
 }

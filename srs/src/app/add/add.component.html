@@ -1,10 +1,11 @@
+<form (ngSubmit)="addCard(add)" #add="ngForm">
 <ul>
     <li> Question:</li>
-    <li><input type="text" #question> </li>
+    <li><input type="text" #question name="question" ngModel required> </li>
     <li class="break"></li>
     <li>Answer: </li>
-    <li><input type="text" #answer></li>
+    <li><input type="text" #answer name="answer" ngModel required></li>
     <li class="break"></li>
-    <li><a class="btn btn-primary" (click)="addCard()">Add Card!</a></li>
+    <li><button class="btn btn-primary" type="submit" [disabled]="!add.valid">Add Card!</button></li>
 </ul>
-
+</form>

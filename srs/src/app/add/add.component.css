@@ -19,6 +19,6 @@ li {
     padding: 0;
 }
 
-a {
-   align-self:stretch;
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
 }
