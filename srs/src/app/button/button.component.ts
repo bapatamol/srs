@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-button',
@@ -7,11 +8,12 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 })
 export class ButtonComponent {
   @Input() name: string;
-  @Output() cardFlipped = new EventEmitter();
+  @Output() cardFlipped = new Subject<void>();
 
 
   flip () {
-    this.cardFlipped.emit();
+    // flips card in learn component
+    this.cardFlipped.next();
   }
 
   buttonClicked() {
