@@ -34,11 +34,13 @@ export class LearnComponent  {
 
   onYes() { 
     console.log("yes");
+    this.loadedSRSCards[this.cardIndex].srslocation = "+";
     this.moveToNextCard();
   }
 
   onNo() { 
     console.log("no");
+    this.loadedSRSCards[this.cardIndex].srslocation = "-";
     this.moveToNextCard();
   }
 
@@ -49,6 +51,7 @@ export class LearnComponent  {
         this.cardText = this.loadedSRSCards[this.cardIndex].clue;
         return;
       } else {
+        console.log(this.loadedSRSCards);
         return;
       }
     }
