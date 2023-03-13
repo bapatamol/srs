@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -9,9 +10,15 @@ import { NgForm } from '@angular/forms';
 })
 export class AddComponent {
 
+  constructor(private http : HttpClient) {
+
+  }
+
   addCard(data: NgForm) {
-    console.log(data.value);
-    data.reset();
+    this.http.post ("http://bapatamol.alwaysdata.net/srs/add.php", data.value)
+    .subscribe(responseData => {
+      console.log(responseData);
+    }) 
   }
 
 }
