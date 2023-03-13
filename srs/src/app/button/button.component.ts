@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class ButtonComponent {
   @Input() name: string;
   @Output() cardFlipped = new Subject<void>();
+  @Output() goToNext = new Subject<void>();
 
 
   flip () {
@@ -18,8 +19,8 @@ export class ButtonComponent {
 
   buttonClicked() {
     switch (this.name) {
-      case "Yes": alert("I know the answer, push further back"); break;
-      case "No": alert ("I do not recall, bring forward"); break;
+      case "Yes": this.recordYes(); break;
+      case "No": this.recordNo(); break;
       case "Flip": this.flip(); break;
     }
   }
@@ -30,6 +31,15 @@ export class ButtonComponent {
         case "Flip": 
         case "Add": return "btn-primary";
       }
+  }
+
+  recordYes() {
+    this.goToNext.next();
+
+  }
+
+  recordNo() { 
+    this.goToNext.next();
   }
 
 }

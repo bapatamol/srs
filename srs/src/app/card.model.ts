@@ -1,8 +1,12 @@
 export class card {
-    public question: string;
+    public id: string;
+    public clue: string;
     public answer: string;
-    constructor(q: string, a: string) {
-        this.question = q;
+    public srslocation: string;
+    constructor(id: string, clue: string, a: string, srslocation: string) {
+        this.id = id;
+        this.clue = clue;
         this.answer = a;
+        this.srslocation = srslocation;
     }
 }

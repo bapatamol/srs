@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { card } from './card.model';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   learnTabStyle: string;
   addTabStyle: string;
+  
+
+  constructor(private http: HttpClient) {}
 
   fixLearnTabStyle() {
     this.learnTabStyle = "tab is-selected";
@@ -24,4 +29,6 @@ export class AppComponent {
     this.learnTabStyle = "tab is-selected";
     this.addTabStyle = "tab";
   } 
+
+  
 }
