@@ -13,12 +13,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LearnComponent } from './learn/learn.component';
 import { AddComponent } from './add/add.component';
 import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './login/login.guard';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
-  { path: 'learn', component: LearnComponent},
-  { path: 'add', component: AddComponent},
+  { path: 'learn', canActivate: [LoginGuard], component: LearnComponent},
+  { path: 'add', canActivate: [LoginGuard], component: AddComponent},
   { path: '**', redirectTo : '/login', pathMatch: 'full'}
 ]
 

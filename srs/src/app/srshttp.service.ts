@@ -6,6 +6,7 @@ import { card } from "./card.model"
 @Injectable({providedIn: 'root'})
 export class SrsHttp {
     loginComplete = new Subject<{status: string}>();
+    isAuthenticated: boolean = false;
   
 
     constructor(private http: HttpClient) { }
@@ -21,7 +22,7 @@ export class SrsHttp {
     login(o: {username: string, password: string}) {
         console.log(o);
         return this.http.post("http://bapatamol.alwaysdata.net/srs/login.php", o).subscribe(respData =>  {
-            console.log(respData);
+            this.isAuthenticated = true;
             this.loginComplete.next(<{status: string}>respData);
           });
     }
