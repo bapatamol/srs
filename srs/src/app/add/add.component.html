@@ -1,3 +1,4 @@
+<label *ngIf="isCardAdded"> {{ "Card added"}}  </label>
 <form (ngSubmit)="addCard(add)" #add="ngForm">
 <ul>
     <li> Question:</li>

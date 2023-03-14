@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { card } from '../card.model';
+import { SrsHttp } from '../srshttp.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class LearnComponent  {
   loadedSRSCards: card [] 
   cardIndex : number;
 
-  constructor(private http: HttpClient) {
+  constructor(private httpHelper: SrsHttp) {
     this.loadSRSDataFromServer();
     this.cardIndex = 0;
   } 
@@ -22,14 +22,6 @@ export class LearnComponent  {
   onCardFlip() {
     this.cardText = this.cardText === this.loadedSRSCards[this.cardIndex].clue ? 
             this.loadedSRSCards[this.cardIndex].answer : this.loadedSRSCards[this.cardIndex].clue;
-  }
-
-  loadSRSDataFromServer() {
-    this.http.get<card[]>("http://bapatamol.alwaysdata.net/srs/get.php")
-    .subscribe( getData => {
-      this.loadedSRSCards = getData;
-      this.cardText = this.loadedSRSCards[0].clue;
-    })
   }
 
   onYes() { 
@@ -58,4 +50,12 @@ export class LearnComponent  {
     this.cardIndex++;
     this.cardText = this.loadedSRSCards[this.cardIndex].clue;
   }
+
+  loadSRSDataFromServer() {
+    this.httpHelper.loadSRSDataFromServer()
+        .subscribe( getData => {
+          this.loadedSRSCards = getData;
+          this.cardText = this.loadedSRSCards[0].clue;
+        })
+    }
 }

@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { SrsHttp } from '../srshttp.service';
 
 
 @Component({
@@ -9,16 +9,17 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent {
+  isCardAdded: boolean = false;
 
-  constructor(private http : HttpClient) {
+  constructor(private httpHelp: SrsHttp) {
 
   }
 
   addCard(data: NgForm) {
-    this.http.post ("http://bapatamol.alwaysdata.net/srs/add.php", data.value)
-    .subscribe(responseData => {
-      console.log(responseData);
-    }) 
+    this.httpHelp.addCard(data.value)
+    .subscribe(respData =>  {
+      this.isCardAdded = true;
+      data.reset();
+    });;
   }
-
 }

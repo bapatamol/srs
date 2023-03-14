@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { card } from './card.model';
+import { Router } from '@angular/router';
+import { SrsHttp } from './srshttp.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +11,15 @@ import { card } from './card.model';
 export class AppComponent {
   learnTabStyle: string;
   addTabStyle: string;
-  
+  loggedInUser: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpHelp: SrsHttp, private router: Router) {}
 
   fixLearnTabStyle() {
     this.learnTabStyle = "tab is-selected";
     this.addTabStyle = "tab";
   }
+
 
   fixAddTabStyle() {
     this.learnTabStyle = "tab";
@@ -28,6 +29,10 @@ export class AppComponent {
   ngOnInit() {
     this.learnTabStyle = "tab is-selected";
     this.addTabStyle = "tab";
+    this.httpHelp.loginComplete.subscribe(respData => {
+      respData.status === "success" ? this.loggedInUser = true : this.loggedInUser = false;
+      this.router.navigate(["/learn"]);
+    });
   } 
 
   

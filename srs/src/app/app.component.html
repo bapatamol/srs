@@ -1,6 +1,9 @@
-<div class="tabs">
+<div  *ngIf="!loggedInUser"> 
+  <div routerLink="/login"> </div>
+</div>
+
+<div class="tabs" *ngIf="loggedInUser">
   <div [class]="learnTabStyle" routerLink="/learn" (click)="fixLearnTabStyle()" #learnTab>Learn</div>
   <div [class]="addTabStyle" routerLink="/add" (click)="fixAddTabStyle()" #addTab>Add</div>
 </div>
-
 <router-outlet></router-outlet>
